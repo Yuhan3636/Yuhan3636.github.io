@@ -1,0 +1,201 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Publications | Yuhan Hu</title><script>try{var t=localStorage.getItem("yh-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script><meta name="description" content="Yuhan Hu, Ph.D. candidate in Industrial and Systems Engineering at NC State. Federated learning for prognostics, stochastic reliability modeling, and reliable multimodal AI."><style>
+/* Layout: top bar with name + nav; below, a narrow profile column beside a ~66ch reading column. Stacks on phones. */
+:root{
+  --paper:#ffffff; --card:#ffffff; --ink:#1f2328; --head:#111827; --muted:#6b7280; --rule:#e2e5e8;
+  --accent:#3b97b8; --signal:#a8601f; --signal-soft:#f6ece2; --alert:#b42318;
+  --f-display:"Iowan Old Style", Palatino, "Palatino Linotype", "Book Antiqua", "TeX Gyre Pagella", Georgia, serif;
+  --f-body:"Iowan Old Style", Palatino, "Palatino Linotype", "Book Antiqua", "TeX Gyre Pagella", Georgia, serif;
+  --f-mono:"Iowan Old Style", Palatino, "Palatino Linotype", "Book Antiqua", "TeX Gyre Pagella", Georgia, serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#16191c; --card:#1d2124; --ink:#d3d7db; --head:#eceef0; --muted:#9aa1a7; --rule:#2c3237;
+    --accent:#6cc3df; --signal:#e2a463; --signal-soft:#2a2118; --alert:#ff7a6e; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#16191c; --card:#1d2124; --ink:#d3d7db; --head:#eceef0; --muted:#9aa1a7; --rule:#2c3237;
+  --accent:#6cc3df; --signal:#e2a463; --signal-soft:#2a2118; --alert:#ff7a6e; color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-body);
+  font-size:18px;line-height:1.65;padding-inline:20px}
+a{color:var(--accent);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+a:hover{text-decoration-thickness:2px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+
+.wrap{max-width:1120px;margin:0 auto}
+header.top{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:flex-end;gap:12px 32px;
+  padding-block:24px 12px;border-bottom:1px solid var(--rule)}
+.brand{display:flex;flex-direction:column;gap:2px;text-decoration:none;color:var(--ink)}
+.brand .nm{font-family:var(--f-display);font-weight:600;font-size:1.5rem;letter-spacing:.005em;line-height:1.1}
+.brand canvas{display:block;width:180px;height:30px}
+nav.main{display:flex;flex-wrap:wrap;gap:4px 26px;align-items:center}
+nav.main a{font-size:1.12rem;color:var(--muted);text-decoration:none;padding-block:4px;border-bottom:2px solid transparent}
+nav.main a:hover{color:var(--ink)}
+nav.main a[aria-current="page"]{color:var(--ink);border-bottom-color:var(--accent)}
+
+.theme-btn{display:inline-grid;place-items:center;width:36px;height:36px;margin-left:4px;border:1px solid var(--rule);border-radius:50%;background:var(--card);color:var(--ink);cursor:pointer;padding:0}
+.theme-btn:hover{border-color:var(--muted)}
+.theme-btn svg{width:18px;height:18px;fill:currentColor}
+.layout{display:grid;grid-template-columns:300px minmax(0,1fr);gap:56px;padding-block:40px 64px}
+aside.profile{display:flex;flex-direction:column;gap:18px;align-self:start;position:sticky;top:calc(env(safe-area-inset-top,0px) + 24px)}
+.photo{width:190px;max-width:100%;padding:5px;background:var(--card);border:1px solid var(--rule);border-radius:2px;line-height:0}
+.photo img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover}
+.who{display:flex;flex-direction:column;gap:2px}
+.who .nm{font-family:var(--f-display);font-size:1.4rem;font-weight:700;color:var(--head)}
+.who .role{color:var(--muted);font-size:1rem;line-height:1.5}
+.who .role .line{white-space:nowrap}
+ul.contact{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;font-size:.95rem}
+ul.contact li{display:flex;gap:12px;align-items:center;min-width:0}
+ul.contact svg{width:18px;height:18px;flex:none;fill:var(--muted);align-self:center}
+ul.contact .v{min-width:0;overflow-wrap:anywhere}
+
+main{min-width:0;max-width:780px}
+h1{font-family:var(--f-display);font-weight:700;color:var(--head);font-size:2.2rem;line-height:1.2;margin:0 0 20px;text-wrap:balance}
+h2{font-family:var(--f-display);font-weight:700;color:var(--head);font-size:2rem;line-height:1.25;margin:44px 0 16px;text-wrap:balance}
+h3{font-family:var(--f-body);font-weight:700;color:var(--head);font-size:1.02rem;margin:0}
+p{margin:0 0 16px}
+.eyebrow{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+
+.market{margin:24px 0 8px;color:var(--alert)}
+.market a{color:inherit}
+.docs{margin-top:28px}
+
+dl.interests{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:10px 20px;margin:20px 0 0}
+dl.interests dt{font-family:var(--f-mono);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding-top:3px}
+dl.interests dd{margin:0}
+ul.plain{margin:0 0 16px;padding-left:1.15em}
+ul.plain li{margin-bottom:10px}
+section.topic{margin-top:48px}
+.project{margin-top:22px}
+h3.proj{font-size:1.05rem;font-style:italic;font-weight:600;margin:0 0 8px}
+.project ul.plain{margin-bottom:8px}
+ul.rpubs{list-style:none;margin:0 0 8px;padding:0;display:flex;flex-direction:column;gap:16px}
+ul.rpubs li{text-align:left;hyphens:manual}
+.rp-t{display:block;font-weight:700;color:var(--accent);line-height:1.4;margin-bottom:4px}
+.rp-t a{color:inherit;text-decoration:none}
+.rp-t a:hover{text-decoration:underline}
+.rp-m{display:block;color:var(--muted);font-size:.95rem}
+.rp-m strong{color:var(--ink)}
+h3.sel-plain{font-weight:400}
+figure.topic-fig{margin:0 0 18px;padding:8px;background:#fff;border:1px solid var(--rule);border-radius:2px;max-width:100%}
+figure.topic-fig img{display:block;width:100%;height:auto}
+img.topic-img ~ ul.plain{clear:both}
+img.topic-img{float:left;width:410px;max-width:55%;height:auto;margin:4px 22px 12px 0}
+main p,main ul.plain li{text-align:justify;hyphens:auto;-webkit-hyphens:auto}
+ul.ppubs{margin:0 0 8px;padding-left:1.25em}
+ul.ppubs li{margin-bottom:12px;line-height:1.55;text-align:left;hyphens:manual}
+ul.ppubs a,.pp-nolink{color:var(--accent);font-weight:600;text-decoration:none}
+ul.ppubs a:hover{text-decoration:underline}
+ul.tlist{margin:0 0 8px;padding-left:1.25em}
+ul.tlist li{margin-bottom:14px;line-height:1.6;text-align:left;hyphens:manual}
+ul.tlist em{color:var(--muted)}
+h2.topic-h{clear:both;font-size:1.25rem;line-height:1.3;margin:48px 0 16px;padding-bottom:6px;border-bottom:1px solid var(--rule)}
+section.topic h2.thrust{margin-top:4px}
+.topic-no{font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+h2.thrust{font-size:1.5rem;line-height:1.3}
+h3.sel{font-size:1.2rem;margin:26px 0 10px}
+
+.entry{display:flex;flex-direction:column;gap:6px;padding-block:18px;border-top:1px solid var(--rule)}
+h2.topic-h + .entry{border-top:none;padding-top:4px}
+.entry:last-child{border-bottom:1px solid var(--rule)}
+.entry .meta{font-family:var(--f-mono);font-size:1rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.entry p{margin:0}
+.entry ul{margin:4px 0 0;padding-left:1.25em}
+.entry li{margin-bottom:4px}
+
+ol.pubs{list-style:none;margin:0;padding:0}
+ol.pubs li{display:grid;grid-template-columns:3.2em minmax(0,1fr);gap:14px;padding-block:12px;border-top:1px solid var(--rule)}
+ol.pubs li:last-child{border-bottom:1px solid var(--rule)}
+ol.pubs .yr{font-family:var(--f-mono);font-size:.82rem;color:var(--muted);padding-top:2px;font-variant-numeric:tabular-nums}
+ol.pubs .ttl{font-weight:500}
+ol.pubs .venue{font-style:italic;color:var(--muted)}
+.me{font-weight:600;color:var(--ink)}
+.status{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--signal);
+  border:1px solid currentColor;border-radius:3px;padding:1px 6px;margin-left:6px;white-space:nowrap;font-style:normal}
+
+.table-wrap{overflow-x:auto;margin:0 0 16px}
+table{border-collapse:collapse;width:100%;font-size:.93rem}
+th,td{text-align:left;padding:10px 12px 10px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+th{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:500}
+td.code{font-family:var(--f-mono);font-size:.82rem;white-space:nowrap}
+td.terms{font-variant-numeric:tabular-nums;color:var(--muted);white-space:nowrap}
+
+footer{border-top:1px solid var(--rule);padding-block:20px 32px;color:var(--muted);font-size:.82rem}
+
+@media (max-width:760px){
+  img.topic-img{float:none;display:block;width:100%;max-width:100%;margin:0 0 16px}
+  .layout{grid-template-columns:minmax(0,1fr);gap:32px;padding-block:28px 48px}
+  aside.profile{position:static;flex-direction:row;flex-wrap:wrap;align-items:center;gap:16px 20px}
+  .photo{width:150px}
+  ul.contact{flex-basis:100%}
+  h1{font-size:1.9rem}
+  dl.interests{grid-template-columns:minmax(0,1fr);gap:2px}
+  dl.interests dd{margin-bottom:10px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style></head><body>
+<div class="wrap">
+  <header class="top">
+    <nav class="main" aria-label="Main"><a href="index.html">About</a><a href="research.html">Research</a><a href="publications.html" aria-current="page">Publications</a><a href="teaching.html">Teaching</a><a href="service.html">Service</a><button class="theme-btn" id="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode"></button></nav>
+  </header>
+  <div class="layout">
+    
+<aside class="profile" aria-label="Profile">
+  <div class="photo"><img src="profile.jpg" alt="Yuhan Hu" width="560" height="700"></div>
+  <div class="who">
+    <span class="nm">Yuhan Hu</span>
+    <span class="role">Ph.D. Candidate<br><span class="line">Industrial and Systems Engineering</span><br>North Carolina State University</span>
+  </div>
+  <ul class="contact">
+    <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg><span class="v">Raleigh, NC</span></li>
+    <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm9 7.2L4.4 7H19.6L12 12.2zM4 8.6V17h16V8.6l-8 5.5-8-5.5z"/></svg><span class="v"><a href="mailto:yhu27@ncsu.edu">yhu27@ncsu.edu</a></span></li>
+    <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6a2 2 0 0 1 2 2v2h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h3V5a2 2 0 0 1 2-2zm0 4h6V5H9v2z"/></svg><span class="v"><a href="https://www.linkedin.com/in/yuhan-hu-2b290a265/" target="_blank" rel="noopener">LinkedIn</a></span></li>
+    <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 1 9l11 6 9-4.9V17h2V9L12 3zM5 13.2V17c0 1.7 3.1 4 7 4s7-2.3 7-4v-3.8l-7 3.8-7-3.8z"/></svg><span class="v"><a href="https://scholar.google.com/citations?hl=en&amp;user=RkIWt6YAAAAJ&amp;view_op=list_works&amp;sortby=pubdate" target="_blank" rel="noopener">Google Scholar</a></span></li>
+  </ul>
+</aside>
+    <main lang="en">
+
+<h1>Publications</h1>
+
+<h2 class="topic-h">Preprints and Working Papers</h2>
+<ul class="ppubs">
+<li><a href="https://arxiv.org/pdf/2604.19451" target="_blank" rel="noopener">A Federated Learning Approach for Personalized Prognostics in the Presence of User-Level Heterogeneity</a><br><strong>Yuhan Hu</strong>, Xiaolei Fang (Submitted)</li>
+<li><span class="pp-nolink">MIRACLE: A Modality Importance and Reliance-Aware Calibration Framework for Robust Multimodal LLM Inference</span><br>A. Sultana, <strong>Yuhan Hu</strong>, Y. Sun, Q. Tong (Submitted)</li>
+<li><span class="pp-nolink">Towards Failure-Mode-Aware Federated Prognostics: Selective Collaboration for Failure Time Prediction</span><br><strong>Yuhan Hu</strong>, Jingwei Qian, Xiaolei Fang, Shu-Cherng Fang (Preparing for Submission)</li>
+<li><span class="pp-nolink">Your Reasoning Benchmark May Not Test Reasoning: A Benchmark for Vision-Dependent Mathematical Reasoning</span><br><strong>Yuhan Hu</strong>, J. Wang, R. Vartak, Bhuwan Dhingra (Preparing for Submission)</li>
+</ul>
+
+<h2 class="topic-h">Journal Papers</h2>
+<ul class="ppubs">
+<li><a href="https://link.springer.com/article/10.1007/s10479-025-06695-5" target="_blank" rel="noopener">A Nonlinear Wiener Process Degradation Model with Damage Resistance for Reliability Analysis</a><br><strong>Yuhan Hu</strong>, Mengmeng Zhu, Huizhong Lin<br><em>Annals of Operations Research, 2025</em></li>
+<li><a href="https://doi.org/10.1142/S0218539323500146" target="_blank" rel="noopener">Modeling Human-Machine Interaction System Reliability with Multiple Dependent Degradation Processes and Situation Awareness</a><br><strong>Yuhan Hu</strong>, Rui Wang, Mengmeng Zhu, Karen B. Chen<br><em>International Journal of Reliability, Quality and Safety Engineering, 2023</em></li>
+</ul>
+
+<h2 class="topic-h">Conference Papers and Book Chapters</h2>
+<ul class="ppubs">
+<li><span class="pp-nolink">Reliability Modeling for Shock-Degradation-Dependent Process Considering Damage Resistance</span><br><strong>Yuhan Hu</strong>, Mengmeng Zhu<br><em>27th ISSAT International Conference on Reliability and Quality in Design, 2022</em></li>
+<li><a href="https://link.springer.com/chapter/10.1007/978-3-031-05347-4_2" target="_blank" rel="noopener">System Reliability Models with Random Shocks and Uncertainty: A State-of-the-Art Review</a><br><strong>Yuhan Hu</strong>, Mengmeng Zhu<br><em>Predictive Analytics in System Reliability, Springer, 2022</em></li>
+</ul>
+
+
+    </main>
+  </div>
+  <footer>&copy; 2026 Yuhan Hu &middot; Last updated October 2026</footer>
+</div>
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('theme-toggle'); if(!btn) return;
+  var MOON='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.6A8.5 8.5 0 0 1 9.4 3.5a8.5 8.5 0 1 0 11.1 11.1z"/></svg>';
+  var SUN='<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></g></svg>';
+  var mq=window.matchMedia?window.matchMedia('(prefers-color-scheme: dark)'):null;
+  function isDark(){var t=root.getAttribute('data-theme'); if(t) return t==='dark'; return !!(mq&&mq.matches);}
+  function render(){var d=isDark(); btn.innerHTML=d?SUN:MOON; var l=d?'Switch to light mode':'Switch to dark mode'; btn.setAttribute('aria-label',l); btn.title=l;}
+  btn.addEventListener('click',function(){var next=isDark()?'light':'dark'; root.setAttribute('data-theme',next); try{localStorage.setItem('yh-theme',next);}catch(e){} render();});
+  if(mq&&mq.addEventListener) mq.addEventListener('change',render);
+  render();
+})();
+</script>
+</body></html>
